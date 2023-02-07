@@ -20,10 +20,22 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
     getAllCrypto();
+    
+  //   function mouseOver() {
+  //   let moreInfo = document.getElementById('#info')
+  //   moreInfo.addEventListener('mouseover', function() {
+  //     moreInfo.textContent = `${crypto.total_supply}`
+  //   })
+  // }
 
-    let moreInfo = document.getElementById('info')
-    moreInfo.addEventListener('mouseover', () => {
-      moreInfo.textContent = `${crypto.total_supply}`
-    })
+  // mouseOver()
 
+    function refreshPage() {
+      let refreshButton = document.querySelector("#refresh")
+      refreshButton.addEventListener('click', function() {
+        window.location.reload();
+      });
+    }
+
+    refreshPage();
 });
