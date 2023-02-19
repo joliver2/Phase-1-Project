@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
     
     function renderOneCrypto(crypto) {
@@ -9,22 +8,34 @@ document.addEventListener("DOMContentLoaded", () => {
         <p id="info">Current Price: $${crypto.current_price} USD <br>
         Price Change (24hr): $${crypto.price_change_24h}</p>
         <img src=${crypto.image}/>
+        <div id="extraInfo"></div>
         `
+
       document.querySelector('body').appendChild(card)
-    }
+
+  }
 
     function getAllCrypto() {
         fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd")
         .then(res => res.json())
-        .then(cryptoData => cryptoData.forEach(crypto => renderOneCrypto(crypto)))
+        .then(cryptoData => cryptoData.forEach( function(crypto) { 
+          
+        renderOneCrypto(crypto)
+        let moreInfo = document.getElementById('info')
+        moreInfo.addEventListener('mouseover', function() {
+        moreInfo.textContent = `${crypto.total_supply}`;
+        
+       })
+        
+    }))
       }
 
     getAllCrypto();
     
   //   function mouseOver() {
-  //   let moreInfo = document.getElementById('#info')
-  //   moreInfo.addEventListener('mouseover', function() {
-  //     moreInfo.textContent = `${crypto.total_supply}`
+  //   let moreInfo = document.getElementById('moreInfo')
+  //   moreInfo.addEventListener('onmouseover', function() {
+  //   moreInfo.textContent = `${crypto.total_supply}`
   //   })
   // }
 
@@ -33,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function refreshPage() {
       let refreshButton = document.querySelector("#refresh")
       refreshButton.addEventListener('click', function() {
-        window.location.reload();
+      window.location.reload();
       });
     }
 
