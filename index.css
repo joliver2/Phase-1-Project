@@ -26,3 +26,11 @@
   background: white;
   font-size: larger;
 }
+
+#search-form {
+  text-align: center;
+  border: grey solid 1px;
+  box-shadow: 3px 4px orange;
+  width: 59rem;
+  margin: 1rem 2rem;
+}
