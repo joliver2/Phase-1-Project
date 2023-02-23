@@ -45,7 +45,19 @@ if (typeof document !== 'undefined') {
     
         fetch(`https://api.coingecko.com/api/v3/coins/${input.value.replace(/ /g,"-").toLowerCase()}`)
         .then(response => response.json())
-        .then(crypto => {
+        .then( function(crypto) {
+          if (crypto.length === 0) {
+          let card = document.createElement('li')
+          card.className = 'card'
+          card.innerHTML = `
+          <h2>"No Crypto to Show"</h2>
+          `
+        
+        document.getElementById('crypto-container').innerHTML = "";
+        document.querySelector('#crypto-container').append(card)
+
+          }
+          else {
           let card = document.createElement('li')
           card.className = 'card'
           card.innerHTML = `
@@ -57,6 +69,7 @@ if (typeof document !== 'undefined') {
         
         document.getElementById('crypto-container').innerHTML = "";
         document.querySelector('#crypto-container').append(card)
+          }
         });
       });
     }
