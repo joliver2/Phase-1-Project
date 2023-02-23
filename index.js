@@ -54,8 +54,9 @@ if (typeof document !== 'undefined') {
           Price Change (24hr): $${crypto.market_data.price_change_24h_in_currency.usd}</p>
           <img src=${crypto.image.large}/>
           `
-        document.body.innerHTML='';
-        document.querySelector('body').appendChild(card)
+        
+        document.getElementById('crypto-container').innerHTML = "";
+        document.querySelector('#crypto-container').append(card)
         });
       });
     }
