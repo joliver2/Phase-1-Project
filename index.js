@@ -43,7 +43,7 @@ if (typeof document !== 'undefined') {
         event.preventDefault();
         const input = document.querySelector('#search');
     
-        fetch(`https://api.coingecko.com/api/v3/coins/${input.value.toLowerCase()}`)
+        fetch(`https://api.coingecko.com/api/v3/coins/${input.value.replace(/ /g,"-").toLowerCase()}`)
         .then(response => response.json())
         .then(crypto => {
           let card = document.createElement('li')
