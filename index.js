@@ -46,11 +46,11 @@ if (typeof document !== 'undefined') {
         fetch(`https://api.coingecko.com/api/v3/coins/${input.value.replace(/ /g,"-").toLowerCase()}`)
         .then(response => response.json())
         .then( function(crypto) {
-          if (crypto.length === 0) {
+          if (crypto.error === "coin not found") {
           let card = document.createElement('li')
           card.className = 'card'
           card.innerHTML = `
-          <h2>"No Crypto to Show"</h2>
+          <h2>Coin not found. Please check your spelling.</h2>
           `
         
         document.getElementById('crypto-container').innerHTML = "";
@@ -76,3 +76,4 @@ if (typeof document !== 'undefined') {
     searchResults();
   });
 }
+
