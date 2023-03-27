@@ -8,7 +8,9 @@ if (typeof document !== 'undefined') {
         <h2>${crypto.name}</h2>
         <div>
         <p class="info">Current Price: $${crypto.current_price} USD <br>
-        Price Change (24hr): $${crypto.price_change_24h}</p>
+        Price Change (24hr): $${crypto.price_change_24h} <br>
+        Price Change % (24hr): ${crypto.price_change_percentage_24h}%
+        </p>
         <img src=${crypto.image}/>
         </div>
         `
@@ -61,11 +63,11 @@ if (typeof document !== 'undefined') {
           let card = document.createElement('li')
           card.className = 'card'
           card.innerHTML = `
-          <h2>${crypto.name}</h2>
+          <h3>${crypto.name}</h3>
           <p class="info">Current Price: $${crypto.market_data.current_price.usd} USD <br>
           Price Change (24hr): $${crypto.market_data.price_change_24h_in_currency.usd} <br>
           High Price (24hr): $ ${crypto.market_data.high_24h.usd} <br>
-
+          Low Price (24hr): $ ${crypto.market_data.low_24h.usd} 
           </p>
           <img src=${crypto.image.large}/>
           `
