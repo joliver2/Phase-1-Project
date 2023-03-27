@@ -63,7 +63,10 @@ if (typeof document !== 'undefined') {
           card.innerHTML = `
           <h2>${crypto.name}</h2>
           <p class="info">Current Price: $${crypto.market_data.current_price.usd} USD <br>
-          Price Change (24hr): $${crypto.market_data.price_change_24h_in_currency.usd}</p>
+          Price Change (24hr): $${crypto.market_data.price_change_24h_in_currency.usd} <br>
+          High Price (24hr): $ ${crypto.market_data.high_24h.usd} <br>
+
+          </p>
           <img src=${crypto.image.large}/>
           `
         
