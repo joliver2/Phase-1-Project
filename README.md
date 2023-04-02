@@ -1,37 +1,14 @@
-# Foobar
+# Crypo Index
 
-Foobar is a Python library for dealing with word pluralization.
-
-## Installation
-
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
-
-```bash
-pip install foobar
-```
+Crypto index is a simple web application that gives you information on 100 different cryptocurriencies. They are listed in order of popularity when the page loads as "cards." To find more info on a coin, simply search the coin's name in the search bar at the top of the page.
 
 ## Usage
 
-```python
-import foobar
-
-# returns 'words'
-foobar.pluralize('word')
-
-# returns 'geese'
-foobar.pluralize('goose')
-
-# returns 'phenomenon'
-foobar.singularize('phenomena')
-```
+When this page is refreshed it grabs the most recent data from the Coin Gecko API to update cryptocurrency information. You can get more information on each coin you are interested in by searching that coin in the search bar. There is also a floating "refresh" button that will also update the page and refresh current cryptocurrency info.
 
 ## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
+Pull requests are welcome.
 
-Please make sure to update tests as appropriate.
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
+Developed by Jeremy Oliver
+github @joliver2
