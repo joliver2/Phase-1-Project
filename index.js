@@ -1,6 +1,8 @@
+// makes sure JavaScript only runs after the window has loaded
 if (typeof document !== 'undefined') {
+  //Makes sure everything runs only after the DOM is loaded
   document.addEventListener("DOMContentLoaded", () => {
-    
+    // function to create one card to display cryptocurrency info
     function renderOneCrypto(crypto) {
         let card = document.createElement('li')
         card.className = 'card'
@@ -18,7 +20,7 @@ if (typeof document !== 'undefined') {
       document.querySelector('#crypto-container').append(card)
 
   }
-
+    // function that creates cards for every cryptocurrency using forEach
     function getAllCrypto() {
         fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd")
         .then(res => res.json())
@@ -28,7 +30,8 @@ if (typeof document !== 'undefined') {
       }
 
     getAllCrypto();
-
+    
+    // page refresh button to update crypto pricing and info
     function refreshPage() {
       let refreshButton = document.querySelector("#refresh")
       refreshButton.addEventListener('click', function() {
@@ -37,6 +40,7 @@ if (typeof document !== 'undefined') {
     }
 
     refreshPage();
+
 
     const searchResults = () => {
       const inputForm = document.querySelector('#search-form')
