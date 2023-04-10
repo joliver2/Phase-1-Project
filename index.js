@@ -47,6 +47,7 @@ if (typeof document !== 'undefined') {
     const searchResults = () => {
       const inputForm = document.querySelector('#search-form')
     
+      // adds an input form for the search function that submits on click
       inputForm.addEventListener('submit', (event) => {
         event.preventDefault();
         const input = document.querySelector('#search');
