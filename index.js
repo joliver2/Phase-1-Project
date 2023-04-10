@@ -16,7 +16,7 @@ if (typeof document !== 'undefined') {
         <img src=${crypto.image}/>
         </div>
         `
-
+      // adds the newly created card 
       document.querySelector('#crypto-container').append(card)
 
   }
@@ -39,16 +39,18 @@ if (typeof document !== 'undefined') {
       });
     }
 
+    // calls the function to refresh the page
     refreshPage();
 
-
+    // arrow function to return results of searched cryptocurrency
     const searchResults = () => {
       const inputForm = document.querySelector('#search-form')
     
       inputForm.addEventListener('submit', (event) => {
         event.preventDefault();
         const input = document.querySelector('#search');
-    
+        
+        // if search results dont match a coin name, return "coin not found"
         fetch(`https://api.coingecko.com/api/v3/coins/${input.value.replace(/ /g,"-").toLowerCase()}`)
         .then(response => response.json())
         .then( function(crypto) {
@@ -63,6 +65,7 @@ if (typeof document !== 'undefined') {
         document.querySelector('#crypto-container').append(card)
 
           }
+          // fetches data from API and creates card for search results
           else {
           let card = document.createElement('li')
           card.className = 'card'
@@ -82,6 +85,7 @@ if (typeof document !== 'undefined') {
         });
       });
     }
+    // execute search results function
     searchResults();
   });
 }
