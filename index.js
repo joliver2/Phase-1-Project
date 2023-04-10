@@ -29,6 +29,7 @@ if (typeof document !== 'undefined') {
     }))
       }
 
+    // calls the function that builds all of the crypto cards
     getAllCrypto();
     
     // page refresh button to update crypto pricing and info
