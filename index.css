@@ -11,7 +11,7 @@
 
 .banner {
   text-align: center;
-  border: grey solid 1px;
+  border: black solid 2px;
   box-shadow: 3px 4px orange;
   width: 59rem;
   margin: 1rem 2rem;
@@ -19,7 +19,7 @@
 
 #refresh {
   text-align: center;
-  border: grey solid 1px;
+  border: black solid 2px;
   box-shadow: 3px 4px orange;
   width: 6rem;
   margin: 1rem 2rem;
@@ -29,7 +29,7 @@
 
 #search-form {
   text-align: center;
-  border: grey solid 1px;
+  border: black solid 2px;
   box-shadow: 3px 4px orange;
   width: 59rem;
   margin: 1rem 2rem;
