@@ -1,6 +1,17 @@
 # Crypo Index
 
-Crypto index is a simple web application that gives you information on 100 different cryptocurriencies. They are listed in order of popularity when the page loads as "cards." To find more info on a coin, simply search the coin's name in the search bar at the top of the page.
+Crypto index is a simple web application that gives you information on 100 different cryptocurriencies. They are listed in order of popularity when the page loads as "cards." To find more info on a coin search the coin's name in the search bar at the top of the page.
+
+Main page coin info:
+Current price
+Price change (24hrs)
+Price change % (24hrs)
+
+Searched coin info:
+Current price
+Price change (24hrs)
+High price (24hrs)
+Low price (24hrs)
 
 ## Usage
 
