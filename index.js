@@ -36,7 +36,8 @@ if (typeof document !== 'undefined') {
     function refreshPage() {
       let refreshButton = document.querySelector("#refresh")
       refreshButton.addEventListener('click', function() {
-      window.location.reload();
+        document.getElementById('crypto-container').innerHTML = "";
+        getAllCrypto();
       });
     }
 
